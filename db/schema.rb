@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20150518191354) do
 
-  create_table "applications", force: :cascade do |t|
+  create_table "college_apps", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "college_id"
     t.datetime "date_submitted"
@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(version: 20150518191354) do
     t.datetime "updated_at"
   end
 
-  add_index "applications", ["college_id"], name: "index_applications_on_college_id"
-  add_index "applications", ["user_id"], name: "index_applications_on_user_id"
+  add_index "college_apps", ["college_id"], name: "index_college_apps_on_college_id"
+  add_index "college_apps", ["user_id"], name: "index_college_apps_on_user_id"
 
   create_table "colleges", force: :cascade do |t|
     t.string   "name"

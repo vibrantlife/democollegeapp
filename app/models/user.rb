@@ -1,4 +1,4 @@
 class User < ActiveRecord::Base
-  has_many :applications
-  has_many :colleges, :through => :applications
+  has_many :college_apps
+  has_many :colleges, :through => :college_apps
 end
