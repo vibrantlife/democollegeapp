@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150518191354) do
+ActiveRecord::Schema.define(version: 20150518201744) do
 
   create_table "college_apps", force: :cascade do |t|
     t.integer  "user_id"
@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(version: 20150518191354) do
 
   create_table "colleges", force: :cascade do |t|
     t.string   "name"
-    t.string   "street_address"
     t.string   "city"
     t.string   "state"
     t.integer  "zip"
