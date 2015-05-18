@@ -14,18 +14,34 @@
 ActiveRecord::Schema.define(version: 20150518191354) do
 
   create_table "applications", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.integer  "college_id"
+    t.datetime "date_submitted"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
+  add_index "applications", ["college_id"], name: "index_applications_on_college_id"
+  add_index "applications", ["user_id"], name: "index_applications_on_user_id"
+
   create_table "colleges", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name"
+    t.string   "street_address"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zip"
+    t.text     "application"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name"
+    t.string   "email"
+    t.string   "password"
+    t.datetime "last_visited"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
