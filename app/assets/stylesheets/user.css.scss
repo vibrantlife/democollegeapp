@@ -7,6 +7,8 @@ $asbestos: #7f8c8d;
 
 /*index/login page*/
 
+
+
 body {
   background-color:#fff;
   font-family: 'Oxygen', sans-serif;
@@ -14,12 +16,12 @@ body {
 
 .container {
     padding: 25px;
-    position: auto 0;
 }
 
 .form-login {
     background-color: $gray;
     color: white;
+    width: 400px;
     padding-top: 10px;
     padding-bottom: 20px;
     padding-left: 20px;
@@ -27,7 +29,7 @@ body {
     border-radius: 15px;
     border-color: $asbestos;
     border-width: 5px;
-    box-shadow:0 1px 0 #cfcfcf;
+    box-shadow: 0 1px 0 #cfcfcf;
 }
 
 h1, h4 {
@@ -46,3 +48,8 @@ h1, h4 {
 }
 
 
+/*registration page*/
+.registration {
+  margin-left: 20px;
+  margin-top: 10px;
+}
