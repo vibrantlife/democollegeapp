@@ -14,6 +14,42 @@
 //= require jquery_ujs
 //= require underscore
 //= require backbone
+//= require_tree ./models
+//= require_tree ./views
 //= require turbolinks
-//= require_tree .
+
+// Rails CSRF Protection
+$(document).ajaxSend(function(e, xhr, options){
+  var token = $("meta[name='csrf-token']").attr("content");
+  xhr.setRequestHeader("X-CSRF-Token", token);
+});
+
+// Underscore template
+_.templateSettings = {
+  interpolate: /\{\{\=(.+?)\}\}/g,
+  evaluate: /\{\{(.+?)\}\}/g
+};
+
+// Routing
+Router = {
+  '/register': function () {
+    new RegisterView();
+  },
+  route: function(path) {
+    _.each(Router, function(callback, route) {
+      if (!_.isRegExp(route)) {
+        route = Backbone.Router.prototype._routeToRegExp(route);
+      }
+      if (route.test(path)) {
+        var args = Backbone.Router.prototype._extractParametrs(route, path);
+        callback.apply(this, args);
+      }
+    });
+  }
+};
+
+// load app
+$(document).ready(function(){
+  Router.route(window.location.pathname);
+});
 
