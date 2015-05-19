@@ -9,14 +9,11 @@ def seed_schools(count)
 end
 
 def seed_apps(count, college_id, user_id)
-  count.times{CollegeApps.create(application: Faker::Hacker.say_something_smart, date_submitted: Faker::Date.forward(31), college_id: college_id, user_id: user_id)}
+  count.times{CollegeApp.create(application: Faker::Hacker.say_something_smart,date_submitted: Faker::Date.forward(31), college_id: college_id, user_id: user_id)}
 end
 
-def seed_all
-  seed_user(10)
-  User.all.each do |user|
-    College.all.each do |college|
-      seed_apps(3, user_id, college_id)
-    end
-  end
-end
+seed_user(10)
+seed_schools(10)
+seed_apps(1, 1, 4)
+seed_apps(1, 3, 5)
+seed_apps(1, 5, 9)
