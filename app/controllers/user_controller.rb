@@ -1,5 +1,7 @@
 class UserController < ApplicationController
 
+  respond_to :html, :json
+
   def index
 
   end
@@ -12,11 +14,9 @@ class UserController < ApplicationController
   def create
     @user = User.new(user_params)
       if @user.save
-        log_in @user
-        redirect_to @user
-      else
-        render 'new'
+        flash[:notice] = 'Acount created.'
       end
+        render_to @user, :location => '/'
   end
 
   def show

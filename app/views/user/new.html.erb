@@ -1,52 +1,49 @@
-
-<form class="form-horizontal registration">
-  <fieldset>
+<div id="register-view">
+<%= form_tag register_path, :class=> 'form-horizontal' do %>
     <div id="legend">
       <legend class="">Register</legend>
     </div>
     <div class="control-group">
       <!-- Username -->
-      <label class="control-label"  for="username">Username</label>
+      <%= label_tag :username, nil, :class => 'control-label'%>
       <div class="controls">
-        <input type="text" id="username" name="username" placeholder="" class="input-xlarge">
+        <%= text_field_tag :name, nil, :placeholder => 'username' %>
         <p class="help-block">Username can contain any letters or numbers, without spaces</p>
       </div>
     </div>
 
     <div class="control-group">
       <!-- E-mail -->
-      <label class="control-label" for="email">E-mail</label>
+      <%= label_tag :email, nil, :class => 'control-label' %>
       <div class="controls">
-        <input type="text" id="email" name="email" placeholder="" class="input-xlarge">
+        <%= text_field_tag :email, nil, :placeholder => 'ladonna@example.com'%>
         <p class="help-block">Please provide your E-mail</p>
       </div>
     </div>
 
     <div class="control-group">
       <!-- Password-->
-      <label class="control-label" for="password">Password</label>
+      <%= label_tag :password, nil, :class => 'control-label' %>
       <div class="controls">
-        <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
+        <%= password_field_tag :password %>
         <p class="help-block">Password should be at least 4 characters</p>
       </div>
     </div>
 
     <div class="control-group">
-      <!-- Password -->
-      <label class="control-label"  for="password_confirm">Password (Confirm)</label>
+      <!-- Password confirmation -->
+      <%= label_tag :password_confirmation, 'Confirm', :class => 'control-label' %>
       <div class="controls">
-        <input type="password" id="password_confirm" name="password_confirm" placeholder="" class="input-xlarge">
+        <%= password_field_tag :password_confirmation %>
         <p class="help-block">Please confirm password</p>
       </div>
     </div>
 
-    <div class="control-group">
-      <!-- Button -->
-      <div class="controls">
-        <button class="btn btn-success">Register</button>
+    <div class="form-actions">
+      <!-- Submit -->
+      <%= submit_tag 'Register', :class => 'btn-btn-primary' %>
+      <div class="clear"></div>
       </div>
-    </div>
-  </fieldset>
-</form>
-
-
+      <% end %>
+      <div class="clear"></div>
+</div>
