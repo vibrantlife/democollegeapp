@@ -95,6 +95,10 @@ h1, h4 {
     background-color: #EEE;
     border-top: 1px solid #DDD;
   }
+
+  input.error {
+  border: 2px solid red;
+  }
 }
 
 .clear { clear: both; }
