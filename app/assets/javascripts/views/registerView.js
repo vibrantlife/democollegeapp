@@ -17,10 +17,12 @@ RegisterView = Backbone.View.extend({
       return false;
     } else {
       this.submitButton.addClass('disabled');
+    // initially disabling submit button
     }
 
     var self = this,
       user = new User(this.attributes());
+      // creates new user with items from attributes fxn
       user.save(null, {
         error: function(originalModel, resp, options) {
           self.$el.find('input').removeClass('error');
@@ -32,7 +34,7 @@ RegisterView = Backbone.View.extend({
         },
         success: function() {
           self.form.data('user-created', true);
-          document.location.href = '/';
+          document.location.href = '/colleges';
         }
       });
       return (this.form.data('user-created') === true);
