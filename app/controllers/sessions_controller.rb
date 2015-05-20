@@ -2,6 +2,10 @@ class SessionsController < ApplicationController
 
   respond_to :html, :json
 
+  def new
+
+  end
+
   def create
     @user = User.authenticate(params[:username], params[:password])
 

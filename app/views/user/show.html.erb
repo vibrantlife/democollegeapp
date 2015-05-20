@@ -1,15 +1,23 @@
 <h1>Welcome Back. Here's your profile</h1>
 
-<table class="userProfile">
-  <th>
-    <tr><td>Username</td><td>Email Address</td></tr>
-  </th>
+<div class="container">
+<table class="userProfile table table-hover">
+  <tr>
+    <th>Username</th>
+    <th>Email address</th>
+  </tr>
+  <tr>
+    <td>user.username</td>
+    <td>user.email</td>
+  </tr>
 </table>
+</div>
 
-<script type="text/template" id="profiletemplate">
+<!-- backbone templating -->
+<!-- <script type="text/template" id="profiletemplate">
   <td>{{username}}</td><td>{{email}}</td>
   <button class="edit">Edit</button>
 </script>
-
+ -->
 
 
