@@ -39,4 +39,10 @@ class ApplicationController < ActionController::Base
   def destroy_user_session
     session[:user_id] = nil
   end
+
+  def respond_modal_with(*args, &blk)
+    options = args.extract_options!
+    options[:responder] = ModalResponder
+    respond_with *args, options, &blk
+  end
 end
