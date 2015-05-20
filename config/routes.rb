@@ -3,10 +3,13 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   root to: 'application#index'
 
+  match 'login' => 'sessions#new', :via => :get
+  match 'logout' => 'sessions#destroy', :via => [:get, :delete]
   match 'register' => 'user#new', :via => :get
   match 'register' => 'user#create', :via => :post
 
-  resource :user, :controller => 'user', :only => [:new, :edit, :show]
+  resource :session, :only => [:new, :create, :destroy]
+  resource :user, :controller => 'user', :except => [:index, :destroy, :show, :edit]
 
   get '/colleges', to: 'college#index'
   get '/college/:id', to: 'college#update'
