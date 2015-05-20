@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   match 'register' => 'user#create', :via => :post
 
   resource :session, :only => [:new, :create, :destroy]
-  resource :user, :controller => 'user', :except => [:index, :destroy, :show, :edit]
+  resource :user, :controller => 'user', :except => [:index, :destroy]
 
   get '/colleges', to: 'college#index'
   get '/college/:id', to: 'college#update'

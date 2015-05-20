@@ -32,5 +32,5 @@ User.authorize = function (attrs, callback) {
 };
 
 
-// rameters: {"username"=>"bhills_4152@veryrealemail.com", "email"=>"bhills_4152@veryrealemail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]",
-// "user"=>{"username"=>"bhills_4152@veryrealemail.com", "email"=>"bhills_4152@veryrealemail.com"}}
+// model for profile/user page
+

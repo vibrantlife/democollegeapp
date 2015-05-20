@@ -30,7 +30,7 @@ RegisterView = Backbone.View.extend({
       },
       success: function () {
         self.form.data('user-created', true);
-        document.location.href = "/colleges";
+        document.location.href = "/user";
       }
     });
     return (this.form.data('user-created') === true)
