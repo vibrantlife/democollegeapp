@@ -7,7 +7,7 @@ var profileTable = Backbone.View.extend({
 
   render: function() {
     _.each(this.collection.models, function(data){
-      this.$el.append(new profileTable({
+      this.$el.append(new userProfile({
         model: data
       }).render().el);
     }, this);
@@ -15,16 +15,6 @@ var profileTable = Backbone.View.extend({
   }
 });
 
-
-// view for user profile
-var userProfile = Backbone.View.extend({
-  tagName: 'tr',
-  template: _.template($('#user-template').html()),
-  render: function() {
-    this.$el.html(this.template(this.model.toJSON()));
-    return this;
-  }
-});
 
 var User = Backbone.Model.extend({
 });
@@ -48,4 +38,17 @@ user.fetch({
   error: function() {
     console.log('no candy for you');
   }
+});
+
+// view for user profile
+$(document).ready(function() {
+var userProfile = Backbone.View.extend({
+  tagName: 'tr',
+  template: _.template($('#user-template').html()),
+  render: function() {
+    this.$el.html(this.template(this.model.toJSON()));
+    return this;
+  }
+});
+
 });
