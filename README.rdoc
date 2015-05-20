@@ -11,6 +11,16 @@ And then execute:
 
     $ bundle
 
+=== Server
+
+From your terminal enter
+
+    $ rails server
+or
+
+    $ rails s
+
+
 === Dependencies
 
 * Rails
