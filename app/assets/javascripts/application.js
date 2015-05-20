@@ -50,6 +50,15 @@ Router = {
   }
 };
 
+var App = {
+  Views: {},
+  Controllers: {},
+  init: function() {
+    new App.Collection.CollegeApp();
+    Backbone.history.start();
+  }
+};
+
 // load app
 $(document).ready(function(){
   Router.route(window.location.pathname);
