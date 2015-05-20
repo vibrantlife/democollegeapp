@@ -1,0 +1,16 @@
+<div id="login-view">
+  <aside>
+    <h1>Apply.io</h1>
+  </aside>
+  <%= form_tag session_path do %>
+    <%= label_tag :username%>
+    <%= text_field_tag :username, params[:username] %>
+
+    <%= label_tag :password %>
+    <% password_field_tag :password %>
+
+    <%= submit_tag "Log In" %>
+    <% end %>
+
+    <div class="clear"></div>
+</div>
