@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   match 'register' => 'user#new', :via => :get
   match 'register' => 'user#create', :via => :post
 
-  resource :user, :controller => 'user', :only => [:new, :edit]
+  resource :user, :controller => 'user', :only => [:new, :edit, :show]
 
   get '/colleges', to: 'college#index'
   get '/college/:id', to: 'college#update'
