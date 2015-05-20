@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 
     if @user
       create_user_session(@user)
-      respond_with @user, :location => '/', :notice => "Welcome! You're Login was Successful"
+      respond_with @user, :location => '/', :notice => "Welcome! Your Login was Successful"
     else
       respond_to do |format|
         format.html {render 'new'}

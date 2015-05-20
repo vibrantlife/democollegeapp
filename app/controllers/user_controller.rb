@@ -1,6 +1,6 @@
 class UserController < ApplicationController
-
-  respond_to :html, :json
+  skip_before_filter :verity_authenticity_token
+  respond_to :json, :html
 
   def index
 
@@ -14,9 +14,9 @@ class UserController < ApplicationController
   def create
     @user = User.new(params[:user])
       if @user.save
-        flash[:notice] = 'Acount created.'
+        flash[:notice] = 'Account created.'
       end
-        redirect_to '/colleges'
+        respond_with(@user)
   end
 
   def show

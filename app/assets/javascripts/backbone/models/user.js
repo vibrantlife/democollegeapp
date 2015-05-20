@@ -8,6 +8,7 @@ var User = Backbone.Model.extend({
     $.ajax({
       type: 'POST',
       url: '/session.json',
+      datatype: 'json',
       data: {
         username: this.get('username'),
         password: password

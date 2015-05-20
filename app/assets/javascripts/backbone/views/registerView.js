@@ -1,6 +1,6 @@
 RegisterView = Backbone.View.extend({
   el: '#register-view',
-  evens: {'submit form': 'createUser'},
+  events: {'submit form': 'createUser'},
 
   attributes: function() {
     return {
