@@ -3,17 +3,16 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   root to: 'application#index'
 
-  get 'register', to: 'user#new', as: :register
-  post '/register', to: 'user#create'
-  get '/user/:id', to: 'user#show', as: :user
-  put '/user/:id', to: 'user#update'
-  delete '/user/:id', to: 'user#destroy'
+  match 'register' => 'user#new', :via => :get
+  match 'register' => 'user#create', :via => :post
+
+  resource :user, :controller => 'user', :only => [:new, :edit]
 
   get '/colleges', to: 'college#index'
   get '/college/:id', to: 'college#update'
+  post '/college/:id', to: 'college#create'
   put  '/college/:id', to: 'college#update'
   delete '/college:id', to: 'college#update'
-
 
 
 

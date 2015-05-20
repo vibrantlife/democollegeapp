@@ -14,9 +14,11 @@
 //= require jquery_ujs
 //= require underscore
 //= require backbone
-//= require_tree ./models
-//= require_tree ./views
-//= require turbolinks
+//= require backbone_rails_sync
+//= require backbone_datalink
+//= require backbone/collegeapp
+//= require_tree .
+
 
 // Rails CSRF Protection
 $(document).ajaxSend(function(e, xhr, options){
@@ -31,17 +33,16 @@ _.templateSettings = {
 };
 
 // Routing
+
 Router = {
-  '/register': function () {
-    new RegisterView();
-  },
+  '/register': function () { new RegisterView() },
   route: function(path) {
     _.each(Router, function(callback, route) {
       if (!_.isRegExp(route)) {
         route = Backbone.Router.prototype._routeToRegExp(route);
       }
       if (route.test(path)) {
-        var args = Backbone.Router.prototype._extractParametrs(route, path);
+        var args = Backbone.Router.prototype._extractParameters(route, path);
         callback.apply(this, args);
       }
     });
