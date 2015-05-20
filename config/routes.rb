@@ -13,8 +13,8 @@ Rails.application.routes.draw do
 
   get '/colleges', to: 'college#index'
   post '/colleges', to: 'college#create'
-  put  '/college/:id', to: 'college#update'
-  delete '/college:id', to: 'college#destroy'
+  put  '/colleges/:id', to: 'college#update'
+  delete '/colleges/:id', to: 'college#destroy'
 
 
 

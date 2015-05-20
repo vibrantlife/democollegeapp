@@ -1,3 +1,13 @@
+// accepts list of apps and lists them with links to edit
+
+var App = {
+  Views: {},
+  Controllers: {},
+  init: function() {
+    new App.Collection.College();
+    Backbone.history.start();
+    }
+  };
 
 App.Collection.College = Backbone.Collection.extend({
   routes: {
@@ -37,3 +47,32 @@ App.Collection.College = Backbone.Collection.extend({
     new App.Views.Edit({model: new College});
   }
 });
+
+
+App.Views.Index = Backbone.View.extend({
+  initialize: function(options) {
+    this.options = options;
+    this.colleges = this.options.colleges;
+
+    this.render();
+  },
+  render: function() {
+    if(this.colleges.length > 0) {
+      var out = "<h3><a href='#new'>Create New</h3><ul>";
+      _(this.colleges).each(function(app){
+        out += "<li><a href='#colleges/" + app.id + "'>" + app.escape('application') + "</a></li>";
+      });
+      out += "</ul>";
+    } else {
+      out = "<h3>No Applications! <a href'#new'>Create one</a></h3>";
+    }
+    $(this.el).html(out);
+    $('#app').html(this.el);
+    // all string concatenation goes into appdiv
+  }
+});
+
+
+
+
+

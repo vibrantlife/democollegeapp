@@ -1,4 +1,4 @@
-var Colleges = Backbone.Model.extend({
+var College = Backbone.Model.extend({
   url: function() {
     var base = "colleges";
     if (this.isNew()) return base;
