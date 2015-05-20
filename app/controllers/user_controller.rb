@@ -14,9 +14,10 @@ class UserController < ApplicationController
   def create
     @user = User.new(user_params)
       if @user.save
-        flash[:notice] = 'Account created.'
+        render :json => @user
+        else
+        render :json => {:errors => @user.errors}, :status => 422
       end
-        respond_with(@user)
   end
 
   def show
@@ -30,6 +31,8 @@ class UserController < ApplicationController
 
   private
   def user_params
+    params[:user][:password] = params[:password]
+    params[:user][:password_confirmation] = params[:password_confirmation]
     params.require(:user).permit(:username, :password, :email, :password_confirmation)
 
   end

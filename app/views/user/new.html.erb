@@ -2,7 +2,7 @@
     <div class="page-header">
       <h1>Register</h1>
     </div>
-<%= form_tag register_path, :class=> 'form-horizontal' do %>
+<%= form_for :user, :class=> 'form-horizontal' do %>
     <div class="control-group">
       <!-- Username -->
       <%= label_tag :username, nil, :class => 'control-label'%>

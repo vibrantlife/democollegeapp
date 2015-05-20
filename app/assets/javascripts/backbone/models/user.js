@@ -11,7 +11,7 @@ var User = Backbone.Model.extend({
       datatype: 'json',
       data: {
         username: this.get('username'),
-        password: password
+        password: this.get('password')
       },
     success: function(data) {
       if (data.error) {
@@ -30,3 +30,7 @@ User.authorize = function (attrs, callback) {
   var user = new User ({email: attrs.email});
   user.authenticate(attrs.password, callback);
 };
+
+
+// rameters: {"username"=>"bhills_4152@veryrealemail.com", "email"=>"bhills_4152@veryrealemail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]",
+// "user"=>{"username"=>"bhills_4152@veryrealemail.com", "email"=>"bhills_4152@veryrealemail.com"}}

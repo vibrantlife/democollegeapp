@@ -18,8 +18,8 @@ RegisterView = Backbone.View.extend({
       this.submitButton.addClass('disabled');
     }
     var self = this;
-      user = new User(this.attributes());
-    user.save(null, {
+      user = new User();
+    user.save(this.attributes(), {
       error: function(originalModel, resp, options) {
         self.$el.find('input').removeClass('error');
         var errors = JSON.parse(resp.responseText).errors;
