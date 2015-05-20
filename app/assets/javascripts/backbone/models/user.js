@@ -1,11 +1,13 @@
 var User = Backbone.Model.extend({
   url: '/user',
+  paramRoot: 'user',
 
   authenticate: function (password, callback) {
     // submits ajax request to ensure login credentials are correct
     var self = this;
-
+    var csrfToken = $("metha[name='csrf-token']").attr("content");
     $.ajax({
+      headers: {'X-CSRF-TOKEN': csrfToken},
       type: 'POST',
       url: '/session.json',
       datatype: 'json',

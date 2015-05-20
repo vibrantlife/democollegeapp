@@ -3,7 +3,6 @@ class UserController < ApplicationController
   respond_to :json, :html
 
   def index
-
   end
 
   def new
@@ -28,6 +27,7 @@ class UserController < ApplicationController
   def edit
     @user = User.find(params[:id])
   end
+
 
   private
   def user_params
