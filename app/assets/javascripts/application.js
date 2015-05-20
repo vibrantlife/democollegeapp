@@ -21,7 +21,7 @@
 
 
 // Rails CSRF Protection
-$(document).ajaxSend(function(e, xhr, options){
+$(document).ajaxSend(function(e, xhr, options) {
   var token = $("meta[name='csrf-token']").attr("content");
   xhr.setRequestHeader("X-CSRF-Token", token);
 });
@@ -33,9 +33,10 @@ _.templateSettings = {
 };
 
 // Routing
-
 Router = {
-  '/register': function () { new RegisterView() },
+  '/register': function () { new RegisterView(); },
+  '/login': function() { new LoginView(); },
+
   route: function(path) {
     _.each(Router, function(callback, route) {
       if (!_.isRegExp(route)) {
