@@ -1,28 +1,26 @@
-== README
+= Apply.io
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+=== Objective
+A web app that allows users to view applications for schools they have applied for.
 
-Things you may want to cover:
+=== Installation
 
-* Ruby version
+Fork the repo
 
-* System dependencies
+And then execute:
 
-* Configuration
+    $ bundle
 
-* Database creation
+=== Dependencies
 
-* Database initialization
+* Rails
+* Boostrap
+* Faker
+* Backbone.js
+* Underscore.js
+* Gem Faker
+* Coffeescript
+* Gem Responders
+* Gem BCrypt
+* Gem Rails-Backbone
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
