@@ -12,7 +12,7 @@ class UserController < ApplicationController
 
 
   def create
-    @user = User.new(params[:user])
+    @user = User.new(user_params)
       if @user.save
         flash[:notice] = 'Account created.'
       end
@@ -26,6 +26,12 @@ class UserController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+  end
+
+  private
+  def user_params
+    params.require(:user).permit(:username, :password, :email, :password_confirmation)
+
   end
 
 end
