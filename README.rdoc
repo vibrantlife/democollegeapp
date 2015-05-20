@@ -9,7 +9,11 @@ Fork the repo
 
 And then execute:
 
-    $ bundle
+    $ bundle install
+
+Once complete execute:
+
+    $ rake db:create db:migrate db:seed
 
 === Server
 
