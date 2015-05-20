@@ -1,4 +1,4 @@
-class ModalResponder < ApplicationController::Responder
+class ModalResponder < ActionController::Responder
   cattr_accessor :modal_layout
   self.modal_layout = 'modal'
 

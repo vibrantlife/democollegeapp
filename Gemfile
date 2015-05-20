@@ -27,6 +27,7 @@ gem 'responders'
 gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'email_validator'
 gem "rails-backbone"
+gem 'responders'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 
