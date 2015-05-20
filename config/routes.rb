@@ -12,10 +12,9 @@ Rails.application.routes.draw do
   resource :user, :controller => 'user', :except => [:index, :destroy]
 
   get '/colleges', to: 'college#index'
-  get '/college/:id', to: 'college#update'
-  post '/college/:id', to: 'college#create'
+  post '/colleges', to: 'college#create'
   put  '/college/:id', to: 'college#update'
-  delete '/college:id', to: 'college#update'
+  delete '/college:id', to: 'college#destroy'
 
 
 
