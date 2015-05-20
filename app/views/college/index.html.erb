@@ -1,5 +1,28 @@
 <h1>View Your College Applications</h1>
 
+<div class="container">
+<table class='table hover-table'>
+    <tr>
+      <th>College Name</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip Code</th>
+    </tr>
+<% @colleges.each do |college| %>
+    <tr>
+      <td><%= college.name %></td>
+      <td><%= college.city %></td>
+      <td><%= college.state %></td>
+      <td><%= college.zip%></td>
+    </tr>
+<% end %>
+</table>
+
+</div>
+
+
+
+<!-- backbone templating -->
 <!-- <div id="notice"></div>
 <div id="app"></div>
 <script type="text/javascript">
