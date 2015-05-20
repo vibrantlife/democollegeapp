@@ -4,14 +4,13 @@ class SessionsController < ApplicationController
 
 
   def new
-
   end
 
   def create
     @user = User.authenticate(user_params)
 
     if @user
-      create_user_session(@user)
+      create_user_session(user_params)
       respond_with @user, :location => '/', :notice => "Welcome! Your Login was Successful"
     else
       respond_to do |format|
@@ -32,7 +31,6 @@ class SessionsController < ApplicationController
     params[:user][:password] = params[:password]
     params[:user][:password_confirmation] = params[:password_confirmation]
     params.require(:user).permit(:username, :password, :email, :password_confirmation)
-
   end
 
 end
